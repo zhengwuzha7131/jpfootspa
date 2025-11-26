@@ -1,6 +1,25 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
+  const [showSpecialModal, setShowSpecialModal] = useState(false);
+  const [hasClosedModal, setHasClosedModal] = useState(false);
+
+  useEffect(() => {
+    // Show modal after a short delay on page load
+    const timer = setTimeout(() => {
+      setShowSpecialModal(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleCloseModal = () => {
+    setShowSpecialModal(false);
+    setHasClosedModal(true);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -389,8 +408,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
             <a 
               href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start"
-              target="_blank"
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
               className="bg-[#8b7355] text-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:scale-105 text-center group"
             >
               <div className="text-5xl mb-4">📅</div>
@@ -471,15 +490,166 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating Book Button */}
-      <a 
-        href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
-            target="_blank"
-            rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 bg-[#8b7355] text-white px-6 py-3 rounded-full shadow-2xl hover:bg-[#6b5444] transition transform hover:scale-110 z-50 font-semibold"
+      {/* Floating Buttons */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-3 items-end">
+        {hasClosedModal && (
+          <button
+            onClick={() => setShowSpecialModal(true)}
+            className="bg-red-600 text-white px-6 py-3 rounded-full shadow-2xl hover:bg-red-700 transition transform hover:scale-110 font-semibold"
           >
-        📅 Book Now
-          </a>
+            🎉 Special Offers
+          </button>
+        )}
+        <a 
+          href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#8b7355] text-white px-6 py-3 rounded-full shadow-2xl hover:bg-[#6b5444] transition transform hover:scale-110 font-semibold"
+        >
+          📅 Book Now
+        </a>
+      </div>
+
+      {/* Special Offers Modal */}
+      {showSpecialModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-100 flex items-center justify-center p-4 animate-fadeIn">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-slideUp">
+            {/* Header */}
+            <div className="bg-linear-to-r from-red-600 to-red-700 text-white p-6 md:p-8 rounded-t-2xl relative">
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 text-white hover:text-gray-200 transition text-3xl font-bold"
+                aria-label="Close"
+              >
+                ×
+              </button>
+              <div className="text-center">
+                <div className="text-5xl mb-3">🎉</div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2">Limited Time Special Packages!</h2>
+                <p className="text-red-100 text-lg">Save more with our exclusive massage packages</p>
+              </div>
+            </div>
+
+            {/* Packages */}
+            <div className="p-6 md:p-8 space-y-6">
+              {/* Package 1: Foot Massage */}
+              <div className="bg-linear-to-br from-[#f5f1ed] to-[#e8dfd6] p-6 rounded-xl border-2 border-[#8b7355] hover:shadow-lg transition">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#8b7355] mb-2">Foot Massage Package</h3>
+                    <p className="text-gray-700 text-lg">4 Sessions × 1 Hour Each</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-red-600">$140</div>
+                    <div className="text-sm text-gray-600 line-through">Was $180</div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-gray-700 mb-2">
+                    <span className="font-semibold text-green-600">💰 Save $40!</span> ($10 off each session)
+                  </p>
+                  <p className="text-sm text-gray-600">Regular price: $45/hour × 4 = $180</p>
+                </div>
+              </div>
+
+              {/* Package 2: Body Massage */}
+              <div className="bg-linear-to-br from-[#f5f1ed] to-[#e8dfd6] p-6 rounded-xl border-2 border-[#8b7355] hover:shadow-lg transition">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#8b7355] mb-2">Body Massage Package</h3>
+                    <p className="text-gray-700 text-lg">4 Sessions × 1 Hour Each</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-red-600">$200</div>
+                    <div className="text-sm text-gray-600 line-through">Was $240</div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-gray-700 mb-2">
+                    <span className="font-semibold text-green-600">💰 Save $40!</span> ($10 off each session)
+                  </p>
+                  <p className="text-sm text-gray-600">Regular price: $60/hour × 4 = $240</p>
+                </div>
+              </div>
+
+              {/* Package 3: Combo Massage */}
+              <div className="bg-linear-to-br from-[#f5f1ed] to-[#e8dfd6] p-6 rounded-xl border-2 border-[#8b7355] hover:shadow-lg transition">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#8b7355] mb-2">Combo Massage Package</h3>
+                    <p className="text-gray-700 text-lg">4 Sessions × 90 Minutes Each</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-red-600">$240</div>
+                    <div className="text-sm text-gray-600 line-through">Was $300</div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg mb-3">
+                  <p className="text-gray-700 mb-2">
+                    <span className="font-semibold text-green-600">💰 Save $60!</span> ($15 off each session)
+                  </p>
+                  <p className="text-sm text-gray-600">Regular price: $75 per 90-min session × 4 = $300</p>
+                </div>
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <p className="text-sm font-semibold text-gray-800 mb-2">Choose Your Combo:</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• 30 min Body + 60 min Foot</li>
+                    <li>• 60 min Body + 30 min Foot</li>
+                    <li>• 45 min Body + 45 min Foot</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="text-center pt-4">
+                <p className="text-gray-700 mb-4 text-lg font-semibold">
+                  Visit us in person to purchase these special packages!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href="tel:630-978-9188"
+                    className="inline-block bg-[#8b7355] text-white px-8 py-4 rounded-full hover:bg-[#6b5444] transition font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+                  >
+                    📞 Call Us: 630-978-9188
+                  </a>
+                  <button
+                    onClick={handleCloseModal}
+                    className="inline-block bg-gray-200 text-gray-700 px-8 py-4 rounded-full hover:bg-gray-300 transition font-semibold text-lg"
+                  >
+                    Maybe Later
+                  </button>
+                </div>
+                <p className="text-sm text-gray-600 mt-4 bg-amber-50 border border-amber-200 rounded-lg p-3 max-w-2xl mx-auto">
+                  <span className="font-semibold">⚠️ In-Person Purchase Required:</span> These packages must be purchased in person at our spa location. Cannot be booked online. Call us for questions or to confirm availability!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { 
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+        .animate-slideUp {
+          animation: slideUp 0.4s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
