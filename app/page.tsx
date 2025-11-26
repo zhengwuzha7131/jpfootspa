@@ -55,6 +55,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600')] bg-cover bg-center"></div>
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="inline-block bg-[#8b7355] text-white px-6 py-2 rounded-full mb-4 font-semibold">
+            ⭐ Serving Aurora Since 2016 ⭐
+          </div>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-[#8b7355] mb-6">
             PLEASANT MASSAGE EXPERIENCE
           </h2>
@@ -75,9 +78,12 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#8b7355] mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#8b7355] mb-4">
             WELCOME TO JP FOOT SPA
           </h2>
+          <p className="text-center text-gray-600 mb-12 text-lg font-semibold">
+            Proudly serving the Aurora community since 2016
+          </p>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
