@@ -86,7 +86,17 @@ export default function Home() {
               <p className="text-lg text-gray-700 leading-relaxed">
                 You'll quickly unwind and relieve any built-up stress you may have from your work and home. We invite you to reach your goals of stress reduction, relaxation and pain relief, combined with our skillful massage and rejuvenating methods.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed font-semibold">
+              
+              {/* Free Hot Stone Highlight */}
+              <div className="bg-linear-to-r from-amber-50 to-orange-50 border-2 border-amber-300 p-5 rounded-lg">
+                <p className="text-lg text-gray-800 font-bold text-center flex items-center justify-center gap-2">
+                  <span className="text-2xl">🔥</span>
+                  <span>Complimentary Hot Stone Treatment with Every Massage!</span>
+                  <span className="text-2xl">🔥</span>
+                </p>
+              </div>
+              
+              <p className="text-base text-gray-700 leading-relaxed font-semibold">
                 You are welcome to <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline">call us at 630-978-9188</a> or <a href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" target="_blank" rel="noopener noreferrer" className="text-[#8b7355] hover:underline">book online</a> to make an appointment! We are looking forward to serving you.
               </p>
             </div>
@@ -146,7 +156,16 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#8b7355] mb-4">
             OUR SERVICES INCLUDE
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">Tailored treatments for your wellness</p>
+          <p className="text-center text-gray-600 mb-4 text-lg">Tailored treatments for your wellness</p>
+          
+          {/* Free Hot Stone Badge */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-linear-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-3 transform hover:scale-105 transition">
+              <span className="text-3xl">🔥</span>
+              <span className="font-bold text-lg">All Massages Include FREE Hot Stone Treatment!</span>
+              <span className="text-3xl">🔥</span>
+            </div>
+          </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Foot Reflexology */}
