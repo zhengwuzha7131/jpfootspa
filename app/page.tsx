@@ -44,7 +44,7 @@ export default function Home() {
               <a href="#contact" className="text-gray-700 hover:text-[#8b7355] transition">Contact</a>
             </div>
             <a 
-              href="https://squareup.com/appointments/book/" 
+              href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#8b7355] text-white px-6 py-2 rounded-full hover:bg-[#6b5444] transition font-medium"
@@ -68,7 +68,7 @@ export default function Home() {
             Professional Massage Team And Service
           </p>
           <a 
-            href="https://squareup.com/appointments/book/" 
+            href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#8b7355] text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-[#6b5444] transition shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -525,7 +525,7 @@ export default function Home() {
 
       {/* Floating Book Button */}
       <a 
-        href="https://squareup.com/appointments/book/" 
+        href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
             target="_blank"
             rel="noopener noreferrer"
         className="fixed bottom-8 right-8 bg-[#8b7355] text-white px-6 py-3 rounded-full shadow-2xl hover:bg-[#6b5444] transition transform hover:scale-110 z-50 font-semibold"
