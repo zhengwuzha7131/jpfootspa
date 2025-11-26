@@ -1,31 +1,6 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    alert('Thank you for your message! We will contact you soon.');
-    setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -93,7 +68,7 @@ export default function Home() {
                 You'll quickly unwind and relieve any built-up stress you may have from your work and home. We invite you to reach your goals of stress reduction, relaxation and pain relief, combined with our skillful massage and rejuvenating methods.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed font-semibold">
-                You are welcome to call us at <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline">630-978-9188</a> to make an appointment! We are looking forward to serving you.
+                You are welcome to <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline">call us at 630-978-9188</a> or <a href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" target="_blank" rel="noopener noreferrer" className="text-[#8b7355] hover:underline">book online</a> to make an appointment! We are looking forward to serving you.
               </p>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
@@ -107,23 +82,41 @@ export default function Home() {
           </div>
           
           {/* Business Info Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-[#f5f1ed] p-8 rounded-lg text-center shadow-md">
+          <div className="grid md:grid-cols-4 gap-6 mt-16">
+            <div className="bg-[#f5f1ed] p-8 rounded-lg text-center shadow-md hover:shadow-lg transition">
               <h3 className="text-xl font-bold text-[#8b7355] mb-4">Opening Hours</h3>
               <p className="text-gray-700 font-semibold">Monday - Sunday</p>
               <p className="text-gray-700">10:00 AM - 10:00 PM (CST)</p>
             </div>
-            <div className="bg-[#f5f1ed] p-8 rounded-lg text-center shadow-md">
+            <div className="bg-[#f5f1ed] p-8 rounded-lg text-center shadow-md hover:shadow-lg transition">
               <h3 className="text-xl font-bold text-[#8b7355] mb-4">Business Phone</h3>
               <a href="tel:630-978-9188" className="text-2xl font-bold text-[#8b7355] hover:text-[#6b5444] transition">
                 630-978-9188
               </a>
             </div>
-            <div className="bg-[#f5f1ed] p-8 rounded-lg text-center shadow-md">
+            <div className="bg-[#f5f1ed] p-8 rounded-lg text-center shadow-md hover:shadow-lg transition">
               <h3 className="text-xl font-bold text-[#8b7355] mb-4">Business Address</h3>
               <p className="text-gray-700">3150 N Aurora Rd</p>
               <p className="text-gray-700">Aurora, IL 60502</p>
             </div>
+            <div className="bg-[#8b7355] p-8 rounded-lg text-center shadow-md hover:shadow-lg transition">
+              <h3 className="text-xl font-bold text-white mb-4">View Pricing</h3>
+              <a 
+                href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-[#8b7355] px-6 py-2 rounded-full hover:bg-gray-100 transition font-semibold text-sm"
+              >
+                See Services & Pricing
+              </a>
+            </div>
+          </div>
+          
+          {/* Booking Notice */}
+          <div className="mt-8 bg-blue-50 p-5 rounded-lg border border-blue-200 max-w-3xl mx-auto">
+            <p className="text-sm text-gray-700 text-center leading-relaxed">
+              <span className="font-semibold text-gray-800">📌 Booking Note:</span> Our online system allows one service booking at a time. For multiple people or services, please book separately or call us at <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline font-medium">630-978-9188</a> for assistance.
+            </p>
           </div>
         </div>
       </section>
@@ -384,108 +377,63 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#8b7355] mb-4">
-            Let Us Serve You
+            Ready to Relax?
           </h2>
           <p className="text-center text-gray-600 mb-12 text-lg">
-            Please fill in the form or call us to make an appointment immediately
+            Book your appointment online or give us a call
           </p>
 
+          {/* Call to Action Buttons */}
+          <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
+            <a 
+              href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#8b7355] text-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:scale-105 text-center group"
+            >
+              <div className="text-5xl mb-4">📅</div>
+              <h3 className="text-2xl font-bold mb-2">Book Online</h3>
+              <p className="text-white/90 mb-4">Schedule your appointment through our online booking system</p>
+              <span className="inline-block bg-white text-[#8b7355] px-6 py-2 rounded-full font-semibold group-hover:bg-gray-100 transition">
+                Book Now →
+              </span>
+            </a>
+
+            <a 
+              href="tel:630-978-9188"
+              className="bg-[#f5f1ed] text-[#8b7355] p-8 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:scale-105 text-center border-2 border-[#8b7355] group"
+            >
+              <div className="text-5xl mb-4">📞</div>
+              <h3 className="text-2xl font-bold mb-2">Call Us</h3>
+              <p className="text-gray-700 mb-4">Speak with us directly to schedule or ask questions</p>
+              <span className="inline-block bg-[#8b7355] text-white px-6 py-2 rounded-full font-semibold group-hover:bg-[#6b5444] transition">
+                630-978-9188
+              </span>
+            </a>
+          </div>
+
+          {/* Business Information */}
           <div className="bg-[#f5f1ed] p-8 md:p-12 rounded-lg shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8b7355] focus:border-transparent outline-none transition"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8b7355] focus:border-transparent outline-none transition"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8b7355] focus:border-transparent outline-none transition"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8b7355] focus:border-transparent outline-none transition"
-                  />
-                </div>
-              </div>
-
+            <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8b7355] focus:border-transparent outline-none transition resize-none"
-                ></textarea>
+                <h3 className="text-lg font-bold text-[#8b7355] mb-3">Opening Hours</h3>
+                <p className="text-gray-700 font-semibold">Monday - Sunday</p>
+                <p className="text-gray-700">10:00 AM - 10:00 PM</p>
+                <p className="text-sm text-gray-600">(CST)</p>
               </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#8b7355] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#6b5444] transition shadow-md hover:shadow-lg"
-              >
-                Send Message
-              </button>
-            </form>
-
-            <div className="mt-8 pt-8 border-t border-gray-300 text-center space-y-2">
-              <p className="text-gray-700 font-semibold">Opening Hours:</p>
-              <p className="text-gray-700">Monday - Sunday: 10:00 AM - 10:00 PM (CST)</p>
-              <p className="text-gray-700 font-semibold mt-4">Business Phone:</p>
-              <p className="text-2xl font-bold text-[#8b7355]">630-978-9188</p>
-              <p className="text-gray-700 font-semibold mt-4">Business Address:</p>
-              <p className="text-gray-700">3150 N Aurora Rd, Aurora, IL 60502</p>
+              <div>
+                <h3 className="text-lg font-bold text-[#8b7355] mb-3">Phone</h3>
+                <a href="tel:630-978-9188" className="text-xl font-bold text-[#8b7355] hover:text-[#6b5444] transition">
+                  630-978-9188
+                </a>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-[#8b7355] mb-3">Address</h3>
+                <p className="text-gray-700">3150 N Aurora Rd</p>
+                <p className="text-gray-700">Aurora, IL 60502</p>
+              </div>
             </div>
           </div>
         </div>
