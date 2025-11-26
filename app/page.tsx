@@ -6,6 +6,7 @@ import Image from 'next/image';
 export default function Home() {
   const [showSpecialModal, setShowSpecialModal] = useState(false);
   const [hasClosedModal, setHasClosedModal] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
     // Show modal after a short delay on page load
@@ -14,6 +15,10 @@ export default function Home() {
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
 
   const handleCloseModal = () => {
     setShowSpecialModal(false);
@@ -29,12 +34,13 @@ export default function Home() {
             <div className="shrink-0">
               <h1 className="text-2xl sm:text-3xl font-bold text-[#8b7355]">JP FOOT SPA</h1>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-6">
               <a href="#home" className="text-gray-700 hover:text-[#8b7355] transition">Home</a>
               <a href="#about" className="text-gray-700 hover:text-[#8b7355] transition">About</a>
               <a href="#services" className="text-gray-700 hover:text-[#8b7355] transition">Services</a>
               <a href="#gallery" className="text-gray-700 hover:text-[#8b7355] transition">Gallery</a>
               <a href="#reviews" className="text-gray-700 hover:text-[#8b7355] transition">Reviews</a>
+              <a href="#faq" className="text-gray-700 hover:text-[#8b7355] transition">FAQ</a>
               <a href="#contact" className="text-gray-700 hover:text-[#8b7355] transition">Contact</a>
             </div>
             <a 
@@ -414,6 +420,208 @@ export default function Home() {
                 "I came here for a deep tissue body and foot massage. It was amazing. Peter (masseur) did such a phenomenal job. I will def be going back for my massages. I highly recommend Peter!"
               </p>
               <p className="font-bold text-[#8b7355]">- Nancy V.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#8b7355] mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">
+            Everything you need to know before your visit
+          </p>
+
+          <div className="space-y-3">
+            {/* Walk-ins */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(0)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>🚶</span> Do you accept walk-ins?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 0 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 0 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    Yes, we welcome walk-in customers! However, availability depends on how busy we are at the time. For guaranteed service, we recommend booking an appointment in advance online or by calling us at <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline font-semibold">630-978-9188</a>.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Cancellation Policy */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(1)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>📅</span> What is your cancellation policy?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 1 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 1 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    We understand that plans change. You may cancel or reschedule your appointment up to <span className="font-semibold">6 hours before</span> your scheduled time without any charge. Cancellations made with less than 6 hours notice will incur a <span className="font-semibold">$15 cancellation fee</span>. This helps us serve other customers who may be waiting for an appointment.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Payment Methods */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(2)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>💳</span> What payment methods do you accept?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 2 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 2 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700 mb-3">
+                    We accept all major credit cards, Zelle, and cash. For your convenience, we offer multiple payment options to suit your preference.
+                  </p>
+                  <p className="text-sm text-gray-600 bg-amber-50 border border-amber-200 rounded p-3">
+                    <span className="font-semibold">💡 Tip:</span> While we accept all forms of payment, cash is especially appreciated for gratuities, as it goes directly to your massage therapist.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Parking */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(3)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>🅿️</span> Is parking available?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 3 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 3 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    Yes! We offer <span className="font-semibold">free parking</span> in a large, convenient lot. You'll have no trouble finding a spot when you visit us.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Holiday Hours */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(4)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>🎄</span> Are you open on holidays?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 4 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 4 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    Yes! We are <span className="font-semibold">open during all major holidays</span> with our regular hours (10:00 AM - 10:00 PM). We're here when you need us most—whether it's a holiday treat or relief from holiday stress!
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Specific Therapist */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(5)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>👤</span> Can I request a specific therapist?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 5 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 5 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    Absolutely! If you have a preferred massage therapist, please <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline font-semibold">call us at 630-978-9188</a> when booking your appointment, and we'll do our best to accommodate your request based on availability.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Target Specific Areas */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(6)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>🎯</span> Can you focus on specific problem areas?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 6 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 6 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    Yes, our skilled therapists can focus on specific areas of tension or discomfort. While we make every effort to address your particular concerns, results may vary depending on the condition. We recommend <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline font-semibold">calling us</a> before your appointment to discuss your specific needs, and we'll ensure your therapist is prepared to target your pain points effectively.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* What to Bring */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFAQ(7)}
+                className="w-full bg-[#f5f1ed] p-5 flex items-center justify-between hover:bg-[#e8dfd6] transition"
+              >
+                <h3 className="text-lg font-bold text-[#8b7355] flex items-center gap-2">
+                  <span>👕</span> What should I wear or bring?
+                </h3>
+                <span className="text-2xl text-[#8b7355]">{openFAQ === 7 ? '−' : '+'}</span>
+              </button>
+              {openFAQ === 7 && (
+                <div className="p-5 bg-white border-t border-gray-200">
+                  <p className="text-gray-700">
+                    Come as you are! Wear comfortable clothing that's easy to move in. We provide everything else you need for a relaxing experience. For foot massages, you'll simply remove your shoes and socks.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Helpful Tips Section */}
+          <div className="mt-16 bg-linear-to-br from-[#8b7355] to-[#6b5444] text-white p-8 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-bold mb-6 text-center">💡 Tips for the Best Experience</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/10 p-5 rounded-lg">
+                <h4 className="font-bold mb-2 text-lg">Before Your Massage:</h4>
+                <ul className="space-y-2 text-sm text-white/90">
+                  <li>• Arrive 5-10 minutes early to relax</li>
+                  <li>• Avoid heavy meals 1-2 hours before</li>
+                  <li>• Communicate any areas of concern</li>
+                  <li>• Let us know your pressure preference</li>
+                </ul>
+              </div>
+              <div className="bg-white/10 p-5 rounded-lg">
+                <h4 className="font-bold mb-2 text-lg">After Your Massage:</h4>
+                <ul className="space-y-2 text-sm text-white/90">
+                  <li>• Drink plenty of water to stay hydrated</li>
+                  <li>• Take it easy for the rest of the day</li>
+                  <li>• Avoid strenuous activity immediately after</li>
+                  <li>• Some soreness the next day is normal</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
