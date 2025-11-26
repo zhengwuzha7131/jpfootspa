@@ -62,7 +62,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="inline-block bg-[#8b7355] text-white px-6 py-2 rounded-full mb-4 font-semibold">
-            ⭐ Serving Aurora Since 2016 ⭐
+            ⭐ Serving Aurora & Naperville Since 2016 ⭐
           </div>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-[#8b7355] mb-6">
             PLEASANT MASSAGE EXPERIENCE
@@ -88,7 +88,7 @@ export default function Home() {
             WELCOME TO JP FOOT SPA
           </h2>
           <p className="text-center text-gray-600 mb-12 text-lg font-semibold">
-            Proudly serving the Aurora community since 2016
+            Proudly serving the Aurora & Naperville communities since 2016
           </p>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
