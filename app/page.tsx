@@ -141,7 +141,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
               <div className="relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1598947492745-217ed8c75b2d?w=600"
+                  src="/images/footmassage.webp"
                   alt="Foot Reflexology"
                   fill
                   className="object-cover"
@@ -195,7 +195,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
               <div className="relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600"
+                  src="/images/aromatheraphy.jpg"
                   alt="Aromatherapy Massage"
                   fill
                   className="object-cover"
@@ -213,7 +213,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
               <div className="relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600"
+                  src="/images/hotstonemassage.webp"
                   alt="Hot Stone Massage"
                   fill
                   className="object-cover"
@@ -231,7 +231,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
               <div className="relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600"
+                  src="/images/couplemassage.jpg"
                   alt="Couple Massage"
                   fill
                   className="object-cover"
@@ -249,7 +249,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
               <div className="relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600"
+                  src="/images/fourhandsmassage.jpg"
                   alt="Four Hands Massage"
                   fill
                   className="object-cover"
@@ -285,7 +285,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
               <div className="relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1549068106-b024baf5062d?w=600"
+                  src="/images/chairmassage.jpg"
                   alt="Chair Massage"
                   fill
                   className="object-cover"
@@ -308,21 +308,19 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#8b7355] mb-12">
             OUR GALLERY
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400',
-              'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400',
-              'https://images.unsplash.com/photo-1598947492745-217ed8c75b2d?w=400',
-              'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400',
-              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400',
-              'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=400',
-              'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400',
-              'https://images.unsplash.com/photo-1591343395082-e120087004b4?w=400'
+              '/gallery/one.webp',
+              '/gallery/two.webp',
+              '/gallery/three.webp',
+              '/gallery/four.webp',
+              '/gallery/five.webp',
+              '/gallery/six.webp'
             ].map((src, idx) => (
               <div key={idx} className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:scale-105">
                 <Image
                   src={src}
-                  alt={`Gallery image ${idx + 1}`}
+                  alt={`JP Foot Spa ${idx + 1}`}
                   fill
                   className="object-cover"
                 />
@@ -348,9 +346,9 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "Absolutely wonderful experience! The foot reflexology was exactly what I needed after a long week. The therapist was professional and attentive to my pressure preferences. The atmosphere is so calming. Will definitely return!"
+                "Mary gave me full body deep tissue massage, BEST I HAVE EVER HAD! I would rate this place 10/10..... 100%!! My husband and I are very grateful for their services. Felt understood, safe, well cared for and respected. We are indeed, re-occuring customers. Totally recommend!!!!!!!!"
               </p>
-              <p className="font-bold text-[#8b7355]">- Sarah Johnson</p>
+              <p className="font-bold text-[#8b7355]">- Haley J.</p>
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -362,9 +360,9 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "I've been coming here for months now and every visit is consistently excellent. The deep tissue massage really helps with my chronic back pain. The staff is friendly and the facility is always clean. Highly recommend!"
+                "The best massage I have ever had!! It hurt so good!! I def will be going back!! Clean and polite!!"
               </p>
-              <p className="font-bold text-[#8b7355]">- Michael Chen</p>
+              <p className="font-bold text-[#8b7355]">- Cheryl H.</p>
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -376,9 +374,9 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "My husband and I tried the couple massage for our anniversary and it was perfect! Both therapists were skilled and the experience was so relaxing. The hot stone treatment was an amazing addition. Worth every penny!"
+                "I came here for a deep tissue body and foot massage. It was amazing. Peter (masseur) did such a phenomenal job. I will def be going back for my massages. I highly recommend Peter!"
               </p>
-              <p className="font-bold text-[#8b7355]">- Emily Rodriguez</p>
+              <p className="font-bold text-[#8b7355]">- Nancy V.</p>
             </div>
           </div>
         </div>
