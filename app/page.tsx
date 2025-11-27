@@ -41,12 +41,11 @@ export default function Home() {
               <a href="#gallery" className="text-gray-700 hover:text-[#8b7355] transition">Gallery</a>
               <a href="#reviews" className="text-gray-700 hover:text-[#8b7355] transition">Reviews</a>
               <a href="#faq" className="text-gray-700 hover:text-[#8b7355] transition">FAQ</a>
+              <a href="/booking" className="text-gray-700 hover:text-[#8b7355] transition">Book</a>
               <a href="#contact" className="text-gray-700 hover:text-[#8b7355] transition">Contact</a>
             </div>
             <a 
-              href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/booking"
               className="bg-[#8b7355] text-white px-6 py-2 rounded-full hover:bg-[#6b5444] transition font-medium"
             >
               Book Online
@@ -71,9 +70,7 @@ export default function Home() {
             Professional Massage Team And Service
           </p>
           <a 
-            href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/booking"
             className="inline-block bg-[#8b7355] text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-[#6b5444] transition shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             Book Online Now
@@ -109,7 +106,7 @@ export default function Home() {
               </div>
               
               <p className="text-base text-gray-700 leading-relaxed font-semibold">
-                You are welcome to <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline">call us at 630-978-9188</a> or <a href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" target="_blank" rel="noopener noreferrer" className="text-[#8b7355] hover:underline">book online</a> to make an appointment! We are looking forward to serving you.
+                You are welcome to <a href="tel:630-978-9188" className="text-[#8b7355] hover:underline">call us at 630-978-9188</a> or <a href="/booking" className="text-[#8b7355] hover:underline">book online</a> to make an appointment! We are looking forward to serving you.
               </p>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
@@ -143,9 +140,7 @@ export default function Home() {
             <div className="bg-[#8b7355] p-8 rounded-lg text-center shadow-md hover:shadow-lg transition">
               <h3 className="text-xl font-bold text-white mb-4">View Pricing</h3>
               <a 
-                href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/booking"
                 className="inline-block bg-white text-[#8b7355] px-6 py-2 rounded-full hover:bg-gray-100 transition font-semibold text-sm"
               >
                 See Services & Pricing
@@ -640,9 +635,7 @@ export default function Home() {
           {/* Call to Action Buttons */}
           <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
             <a 
-              href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start"
-            target="_blank"
-            rel="noopener noreferrer"
+              href="/booking"
               className="bg-[#8b7355] text-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:scale-105 text-center group"
             >
               <div className="text-5xl mb-4">📅</div>
@@ -734,9 +727,7 @@ export default function Home() {
           </button>
         )}
         <a 
-          href="https://app.squareup.com/appointments/book/u5afzjw4o5k3b7/LPQTNEJ86SNJ3/start" 
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/booking"
           className="bg-[#8b7355] text-white px-6 py-3 rounded-full shadow-2xl hover:bg-[#6b5444] transition transform hover:scale-110 font-semibold"
         >
           📅 Book Now
