@@ -36,6 +36,20 @@ export default function BookingPage() {
               Select your service, choose a date and time, and confirm your booking
             </p>
           </div>
+
+          {/* Free Hot Stone Promotion Banner */}
+          <div className="mb-8 bg-linear-to-r from-amber-500 to-orange-500 text-white p-6 rounded-lg shadow-lg">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <span className="text-3xl">🔥</span>
+              <p className="text-xl md:text-2xl font-bold text-center">
+                Complimentary Hot Stone Treatment with All Massages!
+              </p>
+              <span className="text-3xl">🔥</span>
+            </div>
+            <p className="text-center text-amber-50 mt-2 text-sm">
+              (Excludes chair massage)
+            </p>
+          </div>
           
           {/* Square Appointments Widget Container */}
           <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
