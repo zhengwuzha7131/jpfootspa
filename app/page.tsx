@@ -173,6 +173,30 @@ export default function Home() {
               <span className="text-3xl">🔥</span>
             </div>
           </div>
+
+          {/* Pricing */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-5xl mx-auto">
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-[#8b7355]">
+              <h3 className="text-xl font-bold text-[#8b7355] mb-2">Body Massage</h3>
+              <p className="text-3xl font-bold text-gray-800">$65</p>
+              <p className="text-gray-600">per 1 hour</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-[#8b7355]">
+              <h3 className="text-xl font-bold text-[#8b7355] mb-2">Foot Massage</h3>
+              <p className="text-3xl font-bold text-gray-800">$50</p>
+              <p className="text-gray-600">per 1 hour</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-[#8b7355]">
+              <h3 className="text-xl font-bold text-[#8b7355] mb-2">Combo Massage</h3>
+              <p className="text-3xl font-bold text-gray-800">$60</p>
+              <p className="text-gray-600">per 1 hour</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-[#8b7355]">
+              <h3 className="text-xl font-bold text-[#8b7355] mb-2">Combo Massage</h3>
+              <p className="text-3xl font-bold text-gray-800">$75</p>
+              <p className="text-gray-600">per 90 minutes</p>
+            </div>
+          </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Foot Reflexology */}
@@ -764,15 +788,15 @@ export default function Home() {
                     <p className="text-gray-700 text-lg">4 Sessions × 1 Hour Each</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-bold text-red-600">$140</div>
-                    <div className="text-sm text-gray-600 line-through">Was $180</div>
+                    <div className="text-3xl font-bold text-red-600">$160</div>
+                    <div className="text-sm text-gray-600 line-through">Was $200</div>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-gray-700 mb-2">
                     <span className="font-semibold text-green-600">💰 Save $40!</span> ($10 off each session)
                   </p>
-                  <p className="text-sm text-gray-600">Regular price: $45/hour × 4 = $180</p>
+                  <p className="text-sm text-gray-600">Regular price: $50/hour × 4 = $200</p>
                 </div>
               </div>
 
@@ -781,6 +805,26 @@ export default function Home() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-2xl font-bold text-[#8b7355] mb-2">Body Massage Package</h3>
+                    <p className="text-gray-700 text-lg">4 Sessions × 1 Hour Each</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-red-600">$220</div>
+                    <div className="text-sm text-gray-600 line-through">Was $260</div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-gray-700 mb-2">
+                    <span className="font-semibold text-green-600">💰 Save $40!</span> ($10 off each session)
+                  </p>
+                  <p className="text-sm text-gray-600">Regular price: $65/hour × 4 = $260</p>
+                </div>
+              </div>
+
+              {/* Package 3: Combo Massage (1 Hour) */}
+              <div className="bg-linear-to-br from-[#f5f1ed] to-[#e8dfd6] p-6 rounded-xl border-2 border-[#8b7355] hover:shadow-lg transition">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#8b7355] mb-2">Combo Massage Package</h3>
                     <p className="text-gray-700 text-lg">4 Sessions × 1 Hour Each</p>
                   </div>
                   <div className="text-right">
@@ -796,7 +840,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Package 3: Combo Massage */}
+              {/* Package 4: Combo Massage (90 Minutes) */}
               <div className="bg-linear-to-br from-[#f5f1ed] to-[#e8dfd6] p-6 rounded-xl border-2 border-[#8b7355] hover:shadow-lg transition">
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -804,13 +848,13 @@ export default function Home() {
                     <p className="text-gray-700 text-lg">4 Sessions × 90 Minutes Each</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-bold text-red-600">$240</div>
+                    <div className="text-3xl font-bold text-red-600">$260</div>
                     <div className="text-sm text-gray-600 line-through">Was $300</div>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg mb-3">
                   <p className="text-gray-700 mb-2">
-                    <span className="font-semibold text-green-600">💰 Save $60!</span> ($15 off each session)
+                    <span className="font-semibold text-green-600">💰 Save $40!</span> ($10 off each session)
                   </p>
                   <p className="text-sm text-gray-600">Regular price: $75 per 90-min session × 4 = $300</p>
                 </div>

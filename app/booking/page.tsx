@@ -50,6 +50,30 @@ export default function BookingPage() {
               (Excludes chair massage)
             </p>
           </div>
+
+          {/* Service Pricing */}
+          <div className="mb-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-white p-5 rounded-lg shadow-md text-center border border-[#8b7355]/30">
+              <h3 className="font-bold text-[#8b7355] mb-1">Body Massage</h3>
+              <p className="text-2xl font-bold text-gray-800">$65</p>
+              <p className="text-sm text-gray-600">per 1 hour</p>
+            </div>
+            <div className="bg-white p-5 rounded-lg shadow-md text-center border border-[#8b7355]/30">
+              <h3 className="font-bold text-[#8b7355] mb-1">Foot Massage</h3>
+              <p className="text-2xl font-bold text-gray-800">$50</p>
+              <p className="text-sm text-gray-600">per 1 hour</p>
+            </div>
+            <div className="bg-white p-5 rounded-lg shadow-md text-center border border-[#8b7355]/30">
+              <h3 className="font-bold text-[#8b7355] mb-1">Combo Massage</h3>
+              <p className="text-2xl font-bold text-gray-800">$60</p>
+              <p className="text-sm text-gray-600">per 1 hour</p>
+            </div>
+            <div className="bg-white p-5 rounded-lg shadow-md text-center border border-[#8b7355]/30">
+              <h3 className="font-bold text-[#8b7355] mb-1">Combo Massage</h3>
+              <p className="text-2xl font-bold text-gray-800">$75</p>
+              <p className="text-sm text-gray-600">per 90 minutes</p>
+            </div>
+          </div>
           
           {/* Square Appointments Widget Container */}
           <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
